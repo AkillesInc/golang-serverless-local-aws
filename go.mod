@@ -1,4 +1,4 @@
-module github.com/hom-bahrani/go_serverless_docker_compose
+module github.com ///app
 
 require github.com/aws/aws-lambda-go v1.6.0
 
