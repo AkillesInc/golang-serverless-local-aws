@@ -53,7 +53,7 @@ COPY . .
 RUN ls -l
 RUN cat Makefile
 
-# Expose port 8080 to the outside world
-EXPOSE 8080
+# Expose port 3000 to the outside world
+EXPOSE 3000
 
 CMD /bin/sh
