@@ -23,5 +23,10 @@ gomodgen:
 	chmod u+x gomod.sh
 	./gomod.sh
 
-local:
-	sam --debug local start-api --host 0.0.0.0
+local: go
+	sam --debug local start-api \
+		--docker-network go-serverless-local-docker_local \
+		--docker-volume-basedir "$$HOST_PWD" \
+		--host 0.0.0.0 \
+		--port 3000 \
+		--template template.yml
