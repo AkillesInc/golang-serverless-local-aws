@@ -30,3 +30,5 @@ make local
 One thing to bear in mind is this repo uses the heavy weight golang base image available from Docker Hub.  This contains an entire base OS filesystem along with the an installation of the GoLang tools and packages.  Your Dockerfile copies the .go source code into the container, downloads any dependencies, and does the full build inside the container itself.  This can result in an image hundreds of megabytes large.
 
 The alternative is that you can install the GoLang compiler to your local host computer, and use the local compiler to build the GoLang binary.  Then using either the minimalist scratch image or a purposely small filesystem like Alpine as the base (~5MB), you can copy just your single GoLang binary to the container.  This results in a very small docker image.
+
+I'm using the docker evnironment to develop and test Go Lambda function locally and won't be deploying the container, and so the container size isn't an issue for me. 
