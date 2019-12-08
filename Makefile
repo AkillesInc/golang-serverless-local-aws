@@ -24,4 +24,4 @@ gomodgen:
 	./gomod.sh
 
 local:
-	sam local start-api
+	sam --debug local start-api --host 0.0.0.0

@@ -13,11 +13,14 @@ As a prerequisite you need to have [docker](https://docs.docker.com/v17.09/engin
 make build
 ```
 
-#### Run the container
+#### Run the container and generate go binary
 ```bash
 make dev
 ```
-This will also throw you into the conatiners console.
+This will also throw you into the conatiners console. Now you can generate the go binary files
+```bash
+make go
+```
 
 #### Run the lambda functions locally
 ```bash

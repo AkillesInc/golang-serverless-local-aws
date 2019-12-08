@@ -6,6 +6,11 @@ services:
     build: .
     container_name: api
     entrypoint: sh ./scripts/entrypoint.sh
+    environment:
+      - HOST_PWD=$PWD
+      - SAM_CLI_TELEMETRY=0
+    networks:
+      - local
     ports:
       - "3000:3000" # Forward the exposed port 3000 on the container to port 3000 on the host machine
     restart: unless-stopped
@@ -19,3 +24,7 @@ services:
       # one and the same Docker daemon. At any time, there is only
       # one Docker daemon running in your machine, the one running on the host system.
       - /var/run/docker.sock:/var/run/docker.sock
+
+networks:
+  local:
+    driver: bridge
